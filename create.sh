@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Creating new project: ${1}"
+
 repository=git@github.com:filipesperandio/project-templates.git
-git archive --remote=${repository} master templates/${1} | tar xvf -
+git clone ${repository} ${1} && cd ${1} && rm -rf .git
 
